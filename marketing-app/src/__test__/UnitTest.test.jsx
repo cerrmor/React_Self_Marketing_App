@@ -5,28 +5,52 @@ import App from '../App';
 
 //==============Layout Component UnitTests===============
 describe('Header Component Unit Test', () => {
-  it ('Header component renders without crashing', () => {
+  it ('Renders "Header" component without crashing', () => {
     const { container } = render(<Header />);
     expect(container).toBeInTheDocument();
   });
+
+  it('Renders "Home" link', () => {
+    render(<Header/>);
+    const linkElement = screen.getByText(/Home/i);
+    expect(linkElement).toBeInTheDocument();
+  })
+
+  it('Renders "About Us" link', () => {
+    render(<Header/>);
+    const linkElement = screen.getByText(/About Us/i);
+    expect(linkElement).toBeInTheDocument();
+  })
+
+  it('Renders "Contact Us" link', () => {
+    render(<Header/>);
+    const linkElement = screen.getByText(/Contact Us/i);
+    expect(linkElement).toBeInTheDocument();
+  })
+
+  it('Renders "Projects Button" link', () => {
+    render(<Header/>);
+    const linkElement = screen.getByText(/Projects/i);
+    expect(linkElement).toBeInTheDocument();
+  })
 });
 
 describe('Footer Component Unit Test', () => {
-  it ('Footer component renders without crashing', () => {
+  it ('Renders "Footer" component without crashing', () => {
     const { container } = render(<Footer />);
     expect(container).toBeInTheDocument();
   });
 });
 
 describe('Intropost Component Unit Test', () => {
-  it ('Intropost component renders without crashing', () => {
+  it ('Renders "Intropost" component without crashing', () => {
     const { container } = render(<IntroPost />);
     expect(container).toBeInTheDocument();
   });
 });
 
 describe('Post Component Unit Test', () => {
-  it ('Post component renders without crashing', () => {
+  it ('Renders "Post" component without crashing', () => {
     const { container } = render(<Post />);
     expect(container).toBeInTheDocument();
   });
