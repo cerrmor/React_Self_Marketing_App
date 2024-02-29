@@ -4,7 +4,7 @@ import { Search } from '../Components/Shared'
 
 function Home() {
   return (
-    <div>
+    <div className='p-[20px]'>
       <Header/>
       <Search/>
       <IntroPost/>

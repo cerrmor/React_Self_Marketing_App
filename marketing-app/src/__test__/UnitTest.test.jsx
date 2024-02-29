@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { Header, IntroPost, Post, Footer } from '../Components/Layout';
 import { Search } from '../Components/Shared'
 import App from '../App';
+import userEvent from '@testing-library/user-event';
 
 //==============Layout Component UnitTests===============
 describe('Header Component Unit Test', () => {
@@ -30,8 +31,15 @@ describe('Header Component Unit Test', () => {
 
   it('Renders "Projects Button" link', () => {
     render(<Header/>);
-    const linkElement = screen.getByText(/Projects/i);
+    const linkElement = screen.getByRole("button", {name: /projects/i});
     expect(linkElement).toBeInTheDocument();
+  })
+  
+  it('The "Projects Button" was clicked', () => {
+    render(<Header/>);
+    const buttonElement = screen.getByRole("button", {name: /projects/i});
+    userEvent.click(buttonElement);
+    
   })
 });
 
