@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+//Temp banner until better one is selected
 import banner from './../../assets/Images/banner.png'
 import { IoSearchOutline } from "react-icons/io5";
 
