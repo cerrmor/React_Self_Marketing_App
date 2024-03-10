@@ -25,7 +25,7 @@ function Search() {
           'bg-blue-500 text-white rounded-sm':null} p-1 pb-2 border-[1px] border-transparent
           md:rounded-full cursor-pointer md:px-4
           hover:scale-110 hover:border-[1px] hover:border-blue-500 transition-all duration-100 ease-in-out`}>
-            <li>{item.name}</li>
+            <li key={item.name}>{item.name}</li>
           </ul>
         ))}
       </div>

@@ -802,7 +802,7 @@ export interface ApiAuthorAuthor extends Schema.CollectionType {
   attributes: {
     name: Attribute.String;
     bio: Attribute.Text;
-    bioImage: Attribute.Media;
+    bioimage: Attribute.Media;
     posts: Attribute.Relation<
       'api::author.author',
       'oneToMany',
