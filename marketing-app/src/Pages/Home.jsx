@@ -10,7 +10,7 @@ function Home() {
   },[])
   const getPost=()=>{
     GlobalApi.getPost.then(resp=>{
-      console.log(resp)
+      //console.log(resp)
       const result=resp.data.data.map(item=>({
         id:item.id,
         author:item.attributes.author.data.attributes,
@@ -25,7 +25,7 @@ function Home() {
 
       }));
       setPost(result)
-      console.log(result[0].author)
+      //console.log(result)
       
     })
   }
@@ -33,8 +33,8 @@ function Home() {
     <div className='p-[20px]'>
       <Header/>
       <Search/>
-      {post.length>0?<IntroPost post={post[0]}/>:null}
-      <Post/>
+      {/* {post.length > 0 ? <IntroPost post={post[0]}/> : null} */}
+      {post.length > 0 ? <Post post={post}/> : null}
       <Footer/>
     </div>
   )
