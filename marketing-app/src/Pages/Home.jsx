@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Header, Footer, IntroPost, Post } from '../Components/Layout'
+import { Header, Footer, IntroPost, PostListing } from '../Components/Layout'
 import { Search } from '../Components/Shared'
 import GlobalApi from '../Services/GlobalApi'
 
@@ -33,8 +33,8 @@ function Home() {
     <div className='p-[20px]'>
       <Header/>
       <Search/>
-      {/* {post.length > 0 ? <IntroPost post={post[0]}/> : null} */}
-      {post.length > 0 ? <Post post={post}/> : null}
+      {post.length > 0 ? <IntroPost post={post[0]}/> : null}
+      {post.length > 0 ? <PostListing post={post}/> : null}
       <Footer/>
     </div>
   )

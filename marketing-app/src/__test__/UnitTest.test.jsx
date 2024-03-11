@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { Header, IntroPost, Post, Footer } from '../Components/Layout';
+import { Header, IntroPost, PostListing, Footer } from '../Components/Layout';
 import { Search } from '../Components/Shared'
 import App from '../App';
 import userEvent from '@testing-library/user-event';
@@ -59,7 +59,7 @@ describe('Intropost Component Unit Test', () => {
 
 describe('Post Component Unit Test', () => {
   it ('Renders "Post" component without crashing', () => {
-    const { container } = render(<Post />);
+    const { container } = render(<PostListing />);
     expect(container).toBeInTheDocument();
   });
 });
