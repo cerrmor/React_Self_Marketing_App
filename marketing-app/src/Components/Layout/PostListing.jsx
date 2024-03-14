@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function PostListing({post}) {
   return (
@@ -8,7 +9,9 @@ function PostListing({post}) {
                     mt-10 px-10 md:px-15 lg:px-32'>
                       
       {post.map((item) => (
-        <div key={item.id} className='m-4 cursor-pointer'>
+        <Link key={item.id} to ={`PostDetails/${item.id}`}>
+        <div className='m-4 cursor-pointer'>
+          
           <img src={'http://localhost:1337' + item.featuredimage} className='w-full rounded-2xl object-cover h-[200px]' />
           <h3 className='text-red-500 mt-3'>{item.category.name}</h3>
           <h3 className='font-bold mt-3'>{item.title}</h3>
@@ -22,6 +25,7 @@ function PostListing({post}) {
             </div>
           </div>
         </div>
+        </Link>
       ))}
     </div>
   )

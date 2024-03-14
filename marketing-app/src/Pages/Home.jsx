@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Header, Footer, IntroPost, PostListing } from '../Components/Layout'
+import { IntroPost, PostListing } from '../Components/Layout'
 import { Search } from '../Components/Shared'
 import GlobalApi from '../Services/GlobalApi'
 
@@ -45,12 +45,10 @@ function Home() {
   }
 
   return (
-    <div className='p-[20px]'>
-      <Header/>
+    <div>
       <Search selectedTag={(tag)=>filterPost(tag)}/>
       {post.length > 0 ? <IntroPost post={post[0]}/> : null}
       {post.length > 0 ? <PostListing post={post}/> : null}
-      <Footer/>
     </div>
   )
 }

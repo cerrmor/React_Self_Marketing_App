@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react'
-
+import { Link } from 'react-router-dom'
+import PostDetails from '../../Pages/PostDetails'
 
 function IntroPost({post}) {
 
   return (
+    <Link to ={`PostDetails/${post.id}`}>
     <div className='grid grid-cols-1 
                     md:grid-cols-2
                     mt-10 px-10 md:px-15 lg:px-32 gap-8'>
@@ -23,6 +25,7 @@ function IntroPost({post}) {
       
       </div>
     </div>
+    </Link>
   )
 }
 
