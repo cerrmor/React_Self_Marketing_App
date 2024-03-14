@@ -5,6 +5,8 @@ import GlobalApi from '../Services/GlobalApi'
 
 function Home() {
   const [post,setPost]=useState([])
+  const [orgPost,setOrgPost]=useState([])
+
   useEffect(()=>{
     getPost();
   },[])
@@ -16,6 +18,7 @@ function Home() {
         author:item.attributes.author.data.attributes,
         //bioImage:item.attributes.author.bioImage.data.attributes.url,
         category:item.attributes.category.data.attributes,
+        tag:item.attributes.category.data.attributes.name,
         content:item.attributes.content,
         excerpt:item.attributes.excerpt,
         readingTime:item.attributes.readingTime,
@@ -25,14 +28,26 @@ function Home() {
 
       }));
       setPost(result)
-      //console.log(result)
+      setOrgPost(result);
       
     })
   }
+
+  const filterPost=(tag)=>{
+    console.log(typeof(tag))
+    if(tag === 'All')
+    {
+      setPost(orgPost);
+      return ;
+    }
+    const result=orgPost.filter(item=>item.tag==tag);
+    setPost(result);
+  }
+
   return (
     <div className='p-[20px]'>
       <Header/>
-      <Search/>
+      <Search selectedTag={(tag)=>filterPost(tag)}/>
       {post.length > 0 ? <IntroPost post={post[0]}/> : null}
       {post.length > 0 ? <PostListing post={post}/> : null}
       <Footer/>

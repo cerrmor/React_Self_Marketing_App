@@ -8,7 +8,7 @@ function PostListing({post}) {
                     mt-10 px-10 md:px-15 lg:px-32'>
                       
       {post.map((item) => (
-        <div className='m-4 cursor-pointer'>
+        <div key={item.id} className='m-4 cursor-pointer'>
           <img src={'http://localhost:1337' + item.featuredimage} className='w-full rounded-2xl object-cover h-[200px]' />
           <h3 className='text-red-500 mt-3'>{item.category.name}</h3>
           <h3 className='font-bold mt-3'>{item.title}</h3>
